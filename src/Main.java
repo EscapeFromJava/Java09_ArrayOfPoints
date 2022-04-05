@@ -8,23 +8,24 @@ import java.util.stream.DoubleStream;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException {
-        // читаем файл как список треугольников и выводим
+
+        // С‡РёС‚Р°РµРј С„Р°Р№Р» РєР°Рє СЃРїРёСЃРѕРє С‚СЂРµСѓРіРѕР»СЊРЅРёРєРѕРІ Рё РІС‹РІРѕРґРёРј
         String input = "input.txt";
         ArrayList<Triangle> triangleList = getTriangles(input);
-        System.out.println("Список треугольников");
+        System.out.println("РЎРїРёСЃРѕРє С‚СЂРµСѓРіРѕР»СЊРЅРёРєРѕРІ");
         triangleList.forEach(x -> System.out.println(x.toString()));
-        //сортируем по площади и выводим
-        System.out.println("Список площадей треугольников до сортировки");
+        //СЃРѕСЂС‚РёСЂСѓРµРј РїРѕ РїР»РѕС‰Р°РґРё Рё РІС‹РІРѕРґРёРј
+        System.out.println("РЎРїРёСЃРѕРє РїР»РѕС‰Р°РґРµР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРєРѕРІ РґРѕ СЃРѕСЂС‚РёСЂРѕРІРєРё");
         triangleList.forEach(x -> System.out.println(x.getArea()));
         sortTriangleList(triangleList);
-        System.out.println("Список площадей треугольников после сортировки");
+        System.out.println("РЎРїРёСЃРѕРє РїР»РѕС‰Р°РґРµР№ С‚СЂРµСѓРіРѕР»СЊРЅРёРєРѕРІ РїРѕСЃР»Рµ СЃРѕСЂС‚РёСЂРѕРІРєРё");
         triangleList.forEach(x -> System.out.println(x.getArea()));
-        //поиск треугольника с площадью близкой к заданной
-        System.out.println("Треугольник с периметром, наиболее близким к X");
-        System.out.println("Введите число \"X\":");
+        //РїРѕРёСЃРє С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° СЃ РїР»РѕС‰Р°РґСЊСЋ Р±Р»РёР·РєРѕР№ Рє Р·Р°РґР°РЅРЅРѕР№
+        System.out.println("РўСЂРµСѓРіРѕР»СЊРЅРёРє СЃ РїРµСЂРёРјРµС‚СЂРѕРј, РЅР°РёР±РѕР»РµРµ Р±Р»РёР·РєРёРј Рє X");
+        System.out.println("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ \"X\":");
         System.out.println(getMinPerimeterTriangle(triangleList).toString());
-        //поиск треугольника с вершиной близкой к точке 0.0
-        System.out.println("Треугольник, вершина которого наиболее близка к точке 0,0:");
+        //РїРѕРёСЃРє С‚СЂРµСѓРіРѕР»СЊРЅРёРєР° СЃ РІРµСЂС€РёРЅРѕР№ Р±Р»РёР·РєРѕР№ Рє С‚РѕС‡РєРµ 0.0
+        System.out.println("РўСЂРµСѓРіРѕР»СЊРЅРёРє, РІРµСЂС€РёРЅР° РєРѕС‚РѕСЂРѕРіРѕ РЅР°РёР±РѕР»РµРµ Р±Р»РёР·РєР° Рє С‚РѕС‡РєРµ 0,0:");
         minLengthToZero(triangleList);
     }
 
