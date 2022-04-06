@@ -6,7 +6,6 @@ import java.util.*;
 import java.util.stream.DoubleStream;
 
 public class Main {
-
     public static void main(String[] args) throws FileNotFoundException {
         // читаем файл как список треугольников и выводим
         String input = "input.txt";
