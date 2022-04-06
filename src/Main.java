@@ -27,7 +27,7 @@ public class Main {
         System.out.println(getMinPerimeterTriangle(triangleList).toString());
         //поиск треугольника с вершиной близкой к точке 0.0
         System.out.println("Треугольник, вершина которого наиболее близка к точке 0,0:");
-        minLengthToZero(triangleList);
+        System.out.println(minLengthToZero(triangleList));
     }
 
     public static ArrayList<Triangle> getTriangles(String input) throws FileNotFoundException {
@@ -54,12 +54,13 @@ public class Main {
         return triangleWithMinPerimeter;
     }
 
-    public static void minLengthToZero(ArrayList<Triangle> triangleList) {
+    public static Triangle minLengthToZero(ArrayList<Triangle> triangleList) {
         double minLength = triangleList.stream().mapToDouble(Triangle::getMinLengthToZero).min().getAsDouble();
         for (Triangle t : triangleList) {
             if (t.getMinLengthToZero() == minLength)
-                System.out.println(t);
+                return t;
         }
+        return null;
     }
 }
 
